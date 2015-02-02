@@ -82,19 +82,19 @@
     <drawable name="expander_open_drawable">@drawable/ic_material_light_expander_open</drawable>
 
     <!-- The text color of TextView controls -->
-    <color name="text_color">@color/black_transparent</color>
+    <color name="text_color">#FFFFFF</color>
 
     <!-- The text color of the ActionBar -->
     <color name="action_bar_text_color">@android:color/white</color>
 
     <!-- The text color of Dialog -->
-    <color name="dialog_text_color">@color/material_palette_blue_primary_dark</color>
+    <color name="dialog_text_color">#09688</color>
 
     <!-- The highlight color for terms found in the search result -->
     <color name="search_highlight_color">@color/search_highlight</color>
 
     <!-- The background color of the navigation drawer -->
-    <color name="drawer_color">#ffffffff</color>
+    <color name="drawer_color">#ff000000</color>
 
     <!-- The drawer icon -->
     <drawable name="drawer_icon">@drawable/ic_material_light_navigation_drawer</drawable>

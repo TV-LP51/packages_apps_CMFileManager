@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2" xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!-- Base themes -->
-    <style name="FileManager.Theme.Material.Light.NoActionBar" parent="@android:style/Theme.Material.Light.NoActionBar">
+    <style name="FileManager.Theme.Material.Light.NoActionBar" parent="@android:style/Theme.Material.NoActionBar">
         <item name="android:windowBackground">@color/default_background</item>
         <item name="android:windowActionBar">false</item>
         <item name="android:windowActionModeOverlay">true</item>
@@ -34,7 +34,7 @@
     </style>
 
     <!-- Base themes -->
-    <style name="FileManager.Theme.Material.Light" parent="@android:style/Theme.Material.Light">
+    <style name="FileManager.Theme.Material.Light" parent="@android:style/Theme.Material">
         <item name="android:windowBackground">@color/default_background</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:colorPrimary">@color/material_palette_blue_primary</item>
@@ -71,7 +71,7 @@
     </style>
 
     <!-- A theme with overlay -->
-    <style name="FileManager.Theme.Material.Light.Overlay" parent="@style/FileManager.Theme.Material.Light">
+    <style name="FileManager.Theme.Material.Light.Overlay" parent="@style/FileManager.Theme.Material">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@color/black_transparent</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -92,7 +92,7 @@
     </style>
 
     <!-- Action bar -->
-    <style name="FileManager.Widget.ActionBar.White" parent="@android:style/Widget.Material.Light.ActionBar">
+    <style name="FileManager.Widget.ActionBar.White" parent="@android:style/Widget.Material.ActionBar">
         <item name="android:textColorPrimary">@android:color/white</item>
         <item name="android:titleTextStyle">@style/primary_text_appearance</item>
         <item name="android:colorControlHighlight">@color/material_palette_blue_primary_dark</item>
@@ -105,14 +105,14 @@
     <!-- Title -->
     <style name="title_text_appearance">
         <item name="android:textSize">@dimen/title_text_size</item>
-        <item name="android:textColor">@color/black_transparent</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>
     </style>
 
     <!-- The text appearance for principal information (text that need to be highlighted) -->
     <style name="primary_text_appearance">
         <item name="android:textSize">@dimen/primary_text_size</item>
-        <item name="android:textColor">@color/black_transparent</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -124,14 +124,14 @@
     <!-- The text appearance for secondary information (text with a lower importance) -->
     <style name="secondary_text_appearance">
         <item name="android:textSize">@dimen/secondary_text_size</item>
-        <item name="android:textColor">@color/black_transparent</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">normal</item>
     </style>
 
     <!-- The text appearance for hexeditor -->
     <style name="hexeditor_text_appearance">
         <item name="android:textSize">@dimen/hexeditor_text_size</item>
-        <item name="android:textColor">@color/black_transparent</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">normal</item>
     </style>
 
@@ -145,7 +145,7 @@
     <!-- The text appearance for dialog titles -->
     <style name="dialog_title_text_appearance">
         <item name="android:textSize">@dimen/dialog_title_text_size</item>
-        <item name="android:textColor">@color/material_palette_blue_primary_dark</item>
+        <item name="android:textColor">#009688</item>
         <item name="android:textStyle">bold</item>
     </style>
 
@@ -181,14 +181,14 @@
     <style name="horizontal_divider">
         <item name="android:layout_marginTop">@dimen/default_margin</item>
         <item name="android:layout_marginBottom">@dimen/default_margin</item>
-        <item name="android:background">@color/divider_color_light</item>
+        <item name="android:background">#FFFFFF</item>
     </style>
 
     <!-- Vertical Divider -->
     <style name="vertical_divider">
         <item name="android:layout_marginLeft">@dimen/default_margin</item>
         <item name="android:layout_marginRight">@dimen/default_margin</item>
-        <item name="android:background">@color/divider_color</item>
+        <item name="android:background">#FFFFFF</item>
     </style>
 
     <!-- Navigation drawer -->
@@ -196,7 +196,7 @@
         <item name="android:padding">@dimen/default_margin</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textSize">@dimen/primary_text_size</item>
-        <item name="android:textColor">@color/black_transparent</item>
+        <item name="android:textColor">#FFFFFF</item>
         <item name="android:textStyle">bold</item>
     </style>
 
