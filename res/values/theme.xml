@@ -88,7 +88,7 @@
     <color name="action_bar_text_color">@android:color/white</color>
 
     <!-- The text color of Dialog -->
-    <color name="dialog_text_color">#09688</color>
+    <color name="dialog_text_color">#009688</color>
 
     <!-- The highlight color for terms found in the search result -->
     <color name="search_highlight_color">@color/search_highlight</color>
