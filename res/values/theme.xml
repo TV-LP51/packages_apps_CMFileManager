@@ -29,7 +29,7 @@
              - material: @android:style/Theme.Holo
              - material_light: @android:style/Theme.Holo.Light
     -->
-    <string name="base_theme" translatable="false">material_light</string>
+    <string name="base_theme" translatable="false">material</string>
 
     <!-- The image preview -->
     <drawable name="theme_preview_drawable">@drawable/theme_preview</drawable>
