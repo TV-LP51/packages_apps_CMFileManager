@@ -99,7 +99,7 @@
         <item name="android:colorAccent">@color/material_palette_blue_primary</item>
         <item name="android:colorPrimary">@color/material_palette_blue_primary</item>
         <item name="android:colorPrimaryDark">@color/material_palette_blue_primary_dark</item>
-        <item name="android:background">@color/material_palette_blue_primary</item>
+        <item name="android:background">#212121</item>
     </style>
 
     <!-- Title -->

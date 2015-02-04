@@ -17,7 +17,7 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- The default background color -->
-    <color name="default_background">@android:color/black</color>
+    <color name="default_background">#000000</color>
     <!-- The default dissabled background color -->
     <color name="default_background_disabled">#212121</color>
 
