@@ -60,8 +60,8 @@
     <color name="console_bg">#99000000</color>
     <color name="console_fg">#99000000</color>
 
-    <color name="material_palette_blue_accent">#ff80CBC4</color>
-    <color name="material_palette_blue_accent_dark">#ff80CBC4</color>
+    <color name="material_palette_blue_accent">#ff009688</color>
+    <color name="material_palette_blue_accent_dark">#ff009688</color>
     <color name="material_palette_blue_primary">#000000</color>
     <color name="material_palette_blue_primary_dark">#000000</color>
     <color name="actionbar_palette_blue_primary">#212121</color>
