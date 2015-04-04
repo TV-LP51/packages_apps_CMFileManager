@@ -42,7 +42,7 @@
   <string name="copy_text_cd">Clicca per copiare il testo negli appunti</string>
   <string name="copy_text_msg">Testo copiato negli appunti</string>
   <string name="warning_title">Avviso</string>
-  <string name="error_title">Rilevato errore</string>
+  <string name="error_title">Errore</string>
   <string name="confirm_operation">Conferma</string>
   <string name="confirm_overwrite">Conferma sovrascrittura</string>
   <string name="confirm_deletion">Conferma l\'eliminazione</string>
@@ -67,7 +67,7 @@
   <string name="msgs_read_only_filesystem">Il file system è in sola lettura. Prima di procedere è necessario montarlo in lettura/scrittura.</string>
   <string name="msgs_illegal_argument">Argomento non valido. Chiamata al comando fallita.</string>
   <string name="msgs_unresolved_inconsistencies">Operazione non permessa, in quanto potrebbe produrre inconsistenze.</string>
-  <string name="msgs_operation_not_allowed_in_current_directory">Operazione non permessa nella cartella corrente.</string>
+  <string name="msgs_operation_not_allowed_in_current_directory">La cartella di destinazione non può essere una sottocartella d\'origine o essere la stessa dell\'origine.</string>
   <string name="msgs_push_again_to_exit">Premere ancora per uscire.</string>
   <string name="msgs_not_registered_app">Nessuna app registrata per gestire il tipo di file selezionato.</string>
   <string name="msgs_overwrite_files">Alcuni file esistono già nella cartella destinazione.\n\nSovrascrivere?</string>
@@ -105,12 +105,10 @@
   <string name="filesystem_info_warning_title">Nessuna informazione</string>
   <string name="filesystem_info_warning_msg">Non ci sono informazioni disponibili sul file system.</string>
   <string name="filesystem_info_cant_be_mounted_msg">Il file system non può essere montato/smontato.</string>
-  <string name="filesystem_info_mount_not_allowed_msg">Le operazioni di montaggio file system non sono permesse in modalità Safe. Passare a modalità Root.</string>
   <string name="filesystem_info_mount_failed_msg">Montaggio del file system fallito. Alcuni file system, come le memorie SD, non possono essere montati/smontati perché sono dispositivi di sistema a sola lettura.</string>
   <string name="filesystem_info_dialog_title">Informazioni file system</string>
   <string name="filesystem_info_dialog_tab_info">Informazioni</string>
   <string name="filesystem_info_dialog_tab_disk_usage">Utilizzo del disco</string>
-  <string name="filesystem_info_dialog_status">Stato:</string>
   <string name="filesystem_info_dialog_mount_point">Punto di montaggio:</string>
   <string name="filesystem_info_dialog_device">Dispositivo:</string>
   <string name="filesystem_info_dialog_type">Tipo:</string>
@@ -296,7 +294,6 @@
   <string name="pref_editor">Opzioni editor</string>
   <string name="pref_themes">Temi</string>
   <string name="pref_about">Info</string>
-  <string name="pref_about_summary">File Manager v<xliff:g id="version">%1$s</xliff:g>\nCopyright \u00A9 2012-2014 The CyanogenMod Project</string>
   <string name="pref_general_behaviour_category">Generale</string>
   <string name="pref_case_sensitive_sort">Ordinamento case sensitive</string>
   <string name="pref_case_sensitive_sort_summary">Ordinamento dei risultati di ricerca o della navigazione sensibile alle maiuscole</string>
@@ -336,7 +333,6 @@
   <string name="pref_secure_storage_category">Memoria sicura</string>
   <string name="pref_secure_storage_delayed_sync_title">Ritardo di sincronizzazione</string>
   <string name="pref_secure_storage_delayed_sync_summary">La sincronizzazione del filesystem protetto è un\'operazione dispendiosa. Abilita questa opzione per ottenere migliori performance ad ogni operazione, effettuando la sincronizzazione solo quando il filesystem non viene usato, ma con il rischio di perdere dei dati non sincronizzati in caso di crash dell\'app.</string>
-  <string name="pref_secure_storage_reset_password_title">Reimposta password</string>
   <string name="pref_secure_storage_delete_storage_title">Elimina memoria</string>
   <string name="pref_editor_behaviour_category">Comportamento</string>
   <string name="pref_no_suggestions">Nessun suggerimento</string>
@@ -344,9 +340,7 @@
   <string name="pref_word_wrap">A capo automatico</string>
   <string name="pref_hexdump">Dump hex file binari</string>
   <string name="pref_hexdump_desc">Quando si apre un file binario, genera un dump esadecimale del file e aprilo nel visualizzatore esadecimale</string>
-  <string name="pref_editor_syntax_highlight_category">Evidenziatore sintassi</string>
   <string name="pref_syntax_highlight">Evidenziatore sintassi</string>
-  <string name="pref_syntax_highlight_desc">Evidenzia la sintassi del file visualizzato nell\'editor (solo quando un processore di evidenziazione della sintassi è disponibile per il tipo di file)</string>
   <string name="pref_syntax_highlight_color_scheme">Schema colori</string>
   <string name="pref_syntax_highlight_color_scheme_desc">Seleziona lo schema di colore di evidenziazione della sintassi</string>
   <string name="pref_syntax_sh_use_theme_default">Usa tema predefinito</string>

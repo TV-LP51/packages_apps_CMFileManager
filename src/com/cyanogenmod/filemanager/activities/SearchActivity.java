@@ -971,18 +971,11 @@ public class SearchActivity extends Activity
      * {@inheritDoc}
      */
     @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_BACK:
-                // release Console lock held by the async search task
-                if (mExecutable != null) {
-                    mExecutable.end();
-                }
-                back(true, null, false);
-                return true;
-            default:
-                return super.onKeyUp(keyCode, event);
-        }
+    public void onBackPressed() {
+       if (mExecutable != null) {
+            mExecutable.end();
+       }
+       back(true, null, false);
     }
 
     /**
@@ -1032,7 +1025,7 @@ public class SearchActivity extends Activity
             // all of the video files in the current search will also be sent as an extra in the
             // intent along with the item that was clicked
             MimeTypeCategory fileCategory = MimeTypeHelper.getCategoryFromExt(this,
-                    FileHelper.getExtension(fso));
+                    FileHelper.getExtension(fso), fso.getFullPath());
             if (fileCategory == MimeTypeCategory.VIDEO) {
 
                 ArrayList<FileSystemObject> filteredList = filterSearchResults(fileCategory);
@@ -1082,8 +1075,9 @@ public class SearchActivity extends Activity
         if (mAdapter.getCount() < 1) return filteredList;
 
         for (FileSystemObject fso : mAdapter.getFiles()) {
-            if (MimeTypeHelper.getCategoryFromExt(this, FileHelper.getExtension(fso))
-                    == category) {
+            if (MimeTypeHelper.getCategoryFromExt(this,
+                                                  FileHelper.getExtension(fso),
+                                                  fso.getFullPath()) == category) {
                 filteredList.add(fso);
             }
         }

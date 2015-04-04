@@ -42,7 +42,7 @@
   <string name="copy_text_cd">Tryk for at kopiere tekst til udklipsholder</string>
   <string name="copy_text_msg">Tekst kopieret til udklipsholder</string>
   <string name="warning_title">Advarsel</string>
-  <string name="error_title">Fejl fundet</string>
+  <string name="error_title">Fejl</string>
   <string name="confirm_operation">Bekræft handling</string>
   <string name="confirm_overwrite">Bekræft overskrivning</string>
   <string name="confirm_deletion">Bekræft sletning</string>
@@ -52,7 +52,7 @@
   <string name="msgs_privileged_console_alloc_failed">Kan ikke køre i tilstanden Root-adgang. Skifter til Sikker tilstand.</string>
   <string name="msgs_settings_save_failure">Indstillingen kunne ikke anvendes eller gemmes.</string>
   <string name="msgs_settings_invalid_initial_directory">Opstartsmappen \"<xliff:g id="initial_dir">%1$s</xliff:g>\" er ugyldig. Skifter til rodmappe.</string>
-  <string name="root_not_available_msg">Root-adgang er ikke tilgængelig på denne enhed. Handling kan ikke udføres.</string>
+  <string name="root_not_available_msg">Root-adgang er ikke tilgængelig på denne enhed. Handlingen kan ikke udføres.</string>
   <string name="msgs_success">Handlingen blev gennemført med succes.</string>
   <string name="msgs_unknown">Der blev fundet en fejl. Handlingen mislykkedes</string>
   <string name="msgs_insufficient_permissions">Denne handling kræver forøgede rettigheder. Prøver at skifte til tilstanden Root-adgang.</string>
@@ -67,7 +67,7 @@
   <string name="msgs_read_only_filesystem">Filsystemet er skrivebeskyttet. Prøver at montere filsystemet som læs/skriv, før handlingen forsøges..</string>
   <string name="msgs_illegal_argument">Ugyldigt argument. Aktivering mislykkedes.</string>
   <string name="msgs_unresolved_inconsistencies">Handlingen er ikke tilladt, da den vil skabe uoverensstemmelser.</string>
-  <string name="msgs_operation_not_allowed_in_current_directory">Handlingen er ikke tilladt i denne mappe.</string>
+  <string name="msgs_operation_not_allowed_in_current_directory">Destinationsmappen kan ikke være en undermappe af kilden eller være den samme som kilden.</string>
   <string name="msgs_push_again_to_exit">Tryk igen for at afslutte.</string>
   <string name="msgs_not_registered_app">Der er ikke registreret noget program til at håndtere den valgte filtype.</string>
   <string name="msgs_overwrite_files">Nogle af filerne findes allerede i destinationsmappen.\n\nOverskriv?</string>
@@ -105,12 +105,10 @@
   <string name="filesystem_info_warning_title">Ingen information</string>
   <string name="filesystem_info_warning_msg">Der er ingen information tilgængelig for filsystemet.</string>
   <string name="filesystem_info_cant_be_mounted_msg">Filsystemet kan ikke monteres/afmonteres.</string>
-  <string name="filesystem_info_mount_not_allowed_msg">Monteringshandlinger i filsystemet er ikke tilladt i Sikker tilstand. Tryk for at skifte til tilstanden Root-adgang.</string>
   <string name="filesystem_info_mount_failed_msg">Monteringshandlingen i filsystemet mislykkedes. Nogle filsystemer, fx SD-kort, kan ikke mountes/unmountes, fordi de er indbyggede som skrivebeskyttede filsystemer.</string>
   <string name="filesystem_info_dialog_title">Information om filsystemet</string>
   <string name="filesystem_info_dialog_tab_info">Info</string>
   <string name="filesystem_info_dialog_tab_disk_usage">Diskforbrug</string>
-  <string name="filesystem_info_dialog_status">Status:</string>
   <string name="filesystem_info_dialog_mount_point">Monteringspunkt:</string>
   <string name="filesystem_info_dialog_device">Enhed:</string>
   <string name="filesystem_info_dialog_type">Type:</string>
@@ -308,7 +306,6 @@
   <string name="pref_editor">Redigeringsmuligheder</string>
   <string name="pref_themes">Temaer</string>
   <string name="pref_about">Om</string>
-  <string name="pref_about_summary">Filhåndtering v<xliff:g id="version">%1$s</xliff:g>\nOphavsret \u00A9 2012–2014 The CyanogenMod Project</string>
   <string name="pref_general_behaviour_category">Generelt</string>
   <string name="pref_case_sensitive_sort">Brug case-sensitiv sortering</string>
   <string name="pref_case_sensitive_sort_summary">Forskel på store/små bogstaver ved navigering eller sortering af søgeresultater</string>
@@ -348,7 +345,6 @@
   <string name="pref_secure_storage_category">Sikker lagring</string>
   <string name="pref_secure_storage_delayed_sync_title">Forsinket synkronisering</string>
   <string name="pref_secure_storage_delayed_sync_summary">Synkronisering af sikre filsystemer er en bekostelig operation. Aktivér denne mulighed for at tillade bedre svartider efter hver operation, hvor synkroniseringen udføres når filsystemet er i en ubenyttet tilstand, men på bekostning af tabt afventende information, som ikke synkroniseres hvis appen går ned.</string>
-  <string name="pref_secure_storage_reset_password_title">Nulstil adgangskode</string>
   <string name="pref_secure_storage_delete_storage_title">Slet lager</string>
   <string name="pref_editor_behaviour_category">Opførsel</string>
   <string name="pref_no_suggestions">Ingen forslag</string>
@@ -356,9 +352,7 @@
   <string name="pref_word_wrap">Tekstombrydning</string>
   <string name="pref_hexdump">Hexdump af binære filer</string>
   <string name="pref_hexdump_desc">Dan et hex-dump af filen og åbn den i en hex-viser, når en binær fil åbnes</string>
-  <string name="pref_editor_syntax_highlight_category">Syntaksfremhævning</string>
   <string name="pref_syntax_highlight">Syntaksfremhævning</string>
-  <string name="pref_syntax_highlight_desc">Fremhæv syntaksen for den viste fil i editoren (kun når et syntaksfremhævningsmodul er tilgængelig for filtypen)</string>
   <string name="pref_syntax_highlight_color_scheme">Farveskema</string>
   <string name="pref_syntax_highlight_color_scheme_desc">Vælg farvesammensætning for syntaksfremhævning</string>
   <string name="pref_syntax_sh_use_theme_default">Brug standardtema</string>

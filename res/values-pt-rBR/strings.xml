@@ -42,7 +42,7 @@
   <string name="copy_text_cd">Toque para copiar texto para área de transferência</string>
   <string name="copy_text_msg">Texto copiado para área de transferência</string>
   <string name="warning_title">Aviso</string>
-  <string name="error_title">Erro detectado</string>
+  <string name="error_title">Erro</string>
   <string name="confirm_operation">Confirmar operação</string>
   <string name="confirm_overwrite">Confirmar sobrescrita</string>
   <string name="confirm_deletion">Confirmar remoção</string>
@@ -67,7 +67,7 @@
   <string name="msgs_read_only_filesystem">O sistema de arquivos é somente leitura. Tente montar o sistema de arquivos como leitura-escrita antes de tentar a operação.</string>
   <string name="msgs_illegal_argument">Argumento ilegal. Falha na chamada</string>
   <string name="msgs_unresolved_inconsistencies">A operação não é permitida pois ela pode criar inconsistências</string>
-  <string name="msgs_operation_not_allowed_in_current_directory">A operação não é permitida na pasta atual.\n\nPasta de destino não pode ser subpasta da origem ou ser igual à origem.</string>
+  <string name="msgs_operation_not_allowed_in_current_directory">A pasta de destino não pode ser uma subpasta da origem ou ser a mesma da fonte.</string>
   <string name="msgs_push_again_to_exit">Pressione novamente para sair</string>
   <string name="msgs_not_registered_app">Não há aplicação registrada para abrir o tipo de arquivo selecionado.</string>
   <string name="msgs_overwrite_files">Alguns dos arquivos já existem na pasta de destino.\n\nSobrescrever?</string>
@@ -105,12 +105,12 @@
   <string name="filesystem_info_warning_title">Sem informação</string>
   <string name="filesystem_info_warning_msg">Não há informação disponível para o sistema de arquivo</string>
   <string name="filesystem_info_cant_be_mounted_msg">O sistema de arquivo não pode ser montado/desmontado</string>
-  <string name="filesystem_info_mount_not_allowed_msg">Operações de montagem do sistema de arquivo não é permitida no modo Seguro. Pressione para trocar para o modo de Acesso Superusuário.</string>
+  <string name="filesystem_info_mount_not_allowed_msg">Operações de montagem do sistema de arquivo não é permitida no Modo Seguro. Pressione para trocar para o modo de Acesso Super Usuário.</string>
   <string name="filesystem_info_mount_failed_msg">Falha ao montar o sistema de arquivo. Alguns sistemas de arquivos, como cartões SD, não podem ser montados/desmontados porque eles estão como sistemas de arquivo de somente leitura</string>
   <string name="filesystem_info_dialog_title">Informação do sistema de arquivo</string>
   <string name="filesystem_info_dialog_tab_info">Informação</string>
   <string name="filesystem_info_dialog_tab_disk_usage">Uso de disco</string>
-  <string name="filesystem_info_dialog_status">Estado:</string>
+  <string name="filesystem_info_dialog_status">Montado:</string>
   <string name="filesystem_info_dialog_mount_point">Ponto de montagem:</string>
   <string name="filesystem_info_dialog_device">Dispositivo:</string>
   <string name="filesystem_info_dialog_type">Tipo:</string>
@@ -296,7 +296,6 @@
   <string name="pref_editor">Opções do editor</string>
   <string name="pref_themes">Temas</string>
   <string name="pref_about">Sobre</string>
-  <string name="pref_about_summary">Gerenciador de Arquivos v<xliff:g id="version">%1$s</xliff:g>\nCopyright \u00A9 2012-2014 The CyanogenMod Project</string>
   <string name="pref_general_behaviour_category">Geral</string>
   <string name="pref_case_sensitive_sort">Maiúsculas/minúsculas</string>
   <string name="pref_case_sensitive_sort_summary">Considerar maiúsculas/minúsculas quando navegando ou ordenando resultados de buscas</string>
@@ -336,7 +335,7 @@
   <string name="pref_secure_storage_category">Armazenamento seguro</string>
   <string name="pref_secure_storage_delayed_sync_title">Sincronização atrasada</string>
   <string name="pref_secure_storage_delayed_sync_summary">Sincronização de sistemas de arquivos seguros é uma operação dispendiosa. Habilite esta opção para permitir melhor tempo de resposta após cada operação, executando a sincronização quando o sistema de arquivos não estiver sendo utilizado. Mas se o aplicativo falhar, pode perder as informações pendentes não sincronizadas.</string>
-  <string name="pref_secure_storage_reset_password_title">Redefinir a senha</string>
+  <string name="pref_secure_storage_reset_password_title">Alterar senha</string>
   <string name="pref_secure_storage_delete_storage_title">Excluir armazenamento</string>
   <string name="pref_editor_behaviour_category">Comportamento</string>
   <string name="pref_no_suggestions">Sem sugestões</string>
@@ -344,9 +343,9 @@
   <string name="pref_word_wrap">Quebra palavra</string>
   <string name="pref_hexdump">Gerar hex de arq. binários</string>
   <string name="pref_hexdump_desc">Ao abrir um arquivo binário, gerar hexadecimal do arquivo e abrí-lo no visualizador hexadecimal</string>
-  <string name="pref_editor_syntax_highlight_category">Destacar sintaxe</string>
+  <string name="pref_editor_syntax_highlight_category">Realçar a sintaxe</string>
   <string name="pref_syntax_highlight">Destacar sintaxe</string>
-  <string name="pref_syntax_highlight_desc">Destacar a sintaxe do arquivo exibido no editor (somente quando um analisador de sintaxe estiver disponível para o tipo de arquivo)</string>
+  <string name="pref_syntax_highlight_desc">Realce a sintaxe do arquivo exibido no editor (somente quando a sintaxe para o tipo de arquivo estiver disponível)</string>
   <string name="pref_syntax_highlight_color_scheme">Esquema de cor</string>
   <string name="pref_syntax_highlight_color_scheme_desc">Selecione o esquema de cores de realce de sintaxe</string>
   <string name="pref_syntax_sh_use_theme_default">Usar tema padrão</string>

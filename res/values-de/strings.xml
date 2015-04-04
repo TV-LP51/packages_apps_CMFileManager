@@ -42,7 +42,7 @@
   <string name="copy_text_cd">Berühren, um Text in die Zwischenablage zu kopieren</string>
   <string name="copy_text_msg">Text wurde in die Zwischenablage kopiert</string>
   <string name="warning_title">Warnung</string>
-  <string name="error_title">Fehler festgestellt</string>
+  <string name="error_title">Fehler</string>
   <string name="confirm_operation">Aktion bestätigen</string>
   <string name="confirm_overwrite">Überschreiben bestätigen</string>
   <string name="confirm_deletion">Löschen bestätigen</string>
@@ -67,7 +67,7 @@
   <string name="msgs_read_only_filesystem">Auf dem Dateisystem bestehen nur Leserechte. Versuchen Sie das Dateisystem mit Lese- und Schreibrechten zu mounten, bevor Sie die Operation ausführen.</string>
   <string name="msgs_illegal_argument">Ungültiges Argument. Aufruf fehlgeschlagen.</string>
   <string name="msgs_unresolved_inconsistencies">Die Aktion ist nicht gestattet, da sie Inkonsistenzen verursacht.</string>
-  <string name="msgs_operation_not_allowed_in_current_directory">Diese Aktion ist im aktuellen Verzeichnis nicht erlaubt.\n\nDas Zielverzeichnis darf nicht die Quelle oder deren Unterverzeichnis sein.</string>
+  <string name="msgs_operation_not_allowed_in_current_directory">Der Zielordner kann kein Unterordner der Quelldatei oder der Ordner der Quelldatei selbst sein.</string>
   <string name="msgs_push_again_to_exit">Erneut drücken zum Verlassen.</string>
   <string name="msgs_not_registered_app">Für diesen Dateityp ist keine Standardanwendung definiert.</string>
   <string name="msgs_overwrite_files">Einige der Dateien existieren bereits im Zielverzeichnis.\n\nDateien überschreiben?</string>
@@ -110,7 +110,7 @@
   <string name="filesystem_info_dialog_title">Dateisystem-Information</string>
   <string name="filesystem_info_dialog_tab_info">Informationen</string>
   <string name="filesystem_info_dialog_tab_disk_usage">Speichernutzung</string>
-  <string name="filesystem_info_dialog_status">Status:</string>
+  <string name="filesystem_info_dialog_status">Eingebunden:</string>
   <string name="filesystem_info_dialog_mount_point">Mountpunkt:</string>
   <string name="filesystem_info_dialog_device">Gerät:</string>
   <string name="filesystem_info_dialog_type">Typ:</string>
@@ -296,7 +296,6 @@
   <string name="pref_editor">Editoreinstellungen</string>
   <string name="pref_themes">Designs</string>
   <string name="pref_about">Über</string>
-  <string name="pref_about_summary">Dateimanager v<xliff:g id="version">%1$s</xliff:g>\nCopyright \u00A9 2012-2014 The CyanogenMod Project</string>
   <string name="pref_general_behaviour_category">Allgemein</string>
   <string name="pref_case_sensitive_sort">Groß- und Kleinschreibung</string>
   <string name="pref_case_sensitive_sort_summary">Beim Navigieren und Sortieren Groß- und Kleinschreibung berücksichtigen</string>
@@ -336,7 +335,7 @@
   <string name="pref_secure_storage_category">Sicherer Speicher</string>
   <string name="pref_secure_storage_delayed_sync_title">Verzögerte Synchronisierung</string>
   <string name="pref_secure_storage_delayed_sync_summary">Die Synchronisation eines sicheren Dateisystems ist ein aufwendiger Vorgang. Aktivieren Sie diese Option, um die Reaktionszeit nach jeder Operation zu verbessern, in dem die Synchronisation des Dateisystems erst erfolgt, wenn es gerade nicht verwendet wird, aber mit dem Risiko, dass Informationen die noch nicht synchronisiert sind bei einem Absturz der App verloren gehen.</string>
-  <string name="pref_secure_storage_reset_password_title">Passwort zurücksetzen</string>
+  <string name="pref_secure_storage_reset_password_title">Passwort ändern</string>
   <string name="pref_secure_storage_delete_storage_title">Speicher löschen</string>
   <string name="pref_editor_behaviour_category">Verhalten</string>
   <string name="pref_no_suggestions">Keine Vorschläge</string>
@@ -344,9 +343,9 @@
   <string name="pref_word_wrap">Zeilenumbruch</string>
   <string name="pref_hexdump">Hexdump von Binärdateien generieren</string>
   <string name="pref_hexdump_desc">Beim Öffnen einer Binärdatei den Hexdump der Datei generieren und im Hex-Editor anzeigen</string>
-  <string name="pref_editor_syntax_highlight_category">Syntaxhervorhebung</string>
+  <string name="pref_editor_syntax_highlight_category">Syntax-Hervorhebung</string>
   <string name="pref_syntax_highlight">Syntaxhervorhebung</string>
-  <string name="pref_syntax_highlight_desc">Die Syntax einer Datei beim Anzeigen hervorheben (nicht bei allen Dateitypen verfügbar)</string>
+  <string name="pref_syntax_highlight_desc">Syntax-Hervorhebung für die im Editor dargestellte Datei (Nur wenn für den Dateityp ein Syntaxprozessor vorhanden ist)</string>
   <string name="pref_syntax_highlight_color_scheme">Farbschema</string>
   <string name="pref_syntax_highlight_color_scheme_desc">Wählen Sie das Farbschema der Syntaxhervorhebung</string>
   <string name="pref_syntax_sh_use_theme_default">Designvorgaben verwenden</string>

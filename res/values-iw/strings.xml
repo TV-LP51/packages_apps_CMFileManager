@@ -17,10 +17,10 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="app_name">מנהל קבצים</string>
-  <string name="app_description">מנהל הקבצים של CyanogenMod.</string>
+  <string name="app_description">מנהל הקבצים של CyanogenMod</string>
   <string name="size_bytes">בייט</string>
-  <string name="size_kilobytes">קילו בייט</string>
-  <string name="size_megabytes">מגה בייט</string>
+  <string name="size_kilobytes">קילו-בייט</string>
+  <string name="size_megabytes">מגה-בייט</string>
   <string name="size_gigabytes">ג\'יגה-בייט</string>
   <string name="datetime_format_order">%1$s %2$s</string>
   <string name="device_blockdevice">התקן בלוקים</string>
@@ -42,7 +42,7 @@
   <string name="copy_text_cd">הקש כדי להעתיק טקסט ללוח</string>
   <string name="copy_text_msg">הטקסט הועתק ללוח</string>
   <string name="warning_title">אזהרה</string>
-  <string name="error_title">התגלתה שגיאה</string>
+  <string name="error_title">שגיאה</string>
   <string name="confirm_operation">אישור פעולה</string>
   <string name="confirm_overwrite">אישור החלפה</string>
   <string name="confirm_deletion">אישור מחיקה</string>
@@ -68,7 +68,7 @@
   <string name="msgs_read_only_filesystem">מערכת הקבצים היא לקריאה בלבד. נסה לעגן אותה כ\"קריאה/כתיבה\" לפני ביצוע הפעולה.</string>
   <string name="msgs_illegal_argument">טיעון בלתי חוקי. ההפעלה נכשלה.</string>
   <string name="msgs_unresolved_inconsistencies">הפעולה אסורה, היא תגרום לחוסר עקביות.</string>
-  <string name="msgs_operation_not_allowed_in_current_directory">הפעולה אסורה בתיקייה הנוכחית.\n\nתיקיית היעד אינה יכולה להיות תת-תיקייה של תיקיית המקור או זהה למקור.</string>
+  <string name="msgs_operation_not_allowed_in_current_directory">תיקיית היעד אינה יכולה להיות תיקיית משנה של המקור, או זהה למקור.</string>
   <string name="msgs_push_again_to_exit">לחץ שוב ליציאה.</string>
   <string name="msgs_not_registered_app">אין יישום הרשום לטיפול בסוג קובץ זה.</string>
   <string name="msgs_overwrite_files">חלק מהקבצים כבר קיימים בתיקיית היעד. \n\n להחליף?</string>
@@ -88,10 +88,10 @@
   <string name="actionbar_button_storage_cd">מחיצות אחסון</string>
   <string name="actionbar_button_save_cd">שמור</string>
   <string name="actionbar_button_print_cd">הדפס</string>
-  <string name="sort_by_name_asc">לפי שם ▲</string>
-  <string name="sort_by_name_desc">לפי שם ▼</string>
-  <string name="sort_by_date_asc">לפי תאריך ▲</string>
-  <string name="sort_by_date_desc">לפי תאריך ▼</string>
+  <string name="sort_by_name_asc">לפי שם \u25B2</string>
+  <string name="sort_by_name_desc">לפי שם \u25BC</string>
+  <string name="sort_by_date_asc">לפי תאריך \u25B2</string>
+  <string name="sort_by_date_desc">לפי תאריך \u25BC</string>
   <string name="sort_by_size_asc">לפי גודל \u25B2</string>
   <string name="sort_by_size_desc">לפי גודל \u25B2</string>
   <string name="sort_by_type_asc">לפי סוג \u25B2</string>
@@ -111,7 +111,7 @@
   <string name="filesystem_info_dialog_title">מידע על מערכת קבצים</string>
   <string name="filesystem_info_dialog_tab_info">מידע</string>
   <string name="filesystem_info_dialog_tab_disk_usage">שימוש בדיסק</string>
-  <string name="filesystem_info_dialog_status">מצב:</string>
+  <string name="filesystem_info_dialog_status">מעוגן:</string>
   <string name="filesystem_info_dialog_mount_point">נקודת עיגון:</string>
   <string name="filesystem_info_dialog_device">מכשיר:</string>
   <string name="filesystem_info_dialog_type">סוג:</string>
@@ -310,7 +310,6 @@
   <string name="pref_editor">אפשרויות עורך</string>
   <string name="pref_themes">ערכות נושא</string>
   <string name="pref_about">אודות</string>
-  <string name="pref_about_summary">מנהל הקבצים v<xliff:g id="version">%1$s</xliff:g>\nזכויות יוצרים \u00A9 2012-2014 פרויקט ה-CyanogenMod</string>
   <string name="pref_general_behaviour_category">כללי</string>
   <string name="pref_case_sensitive_sort">מיין לפי אותיות גדולות וקטנות</string>
   <string name="pref_case_sensitive_sort_summary">שקול מקרה כאשר מנווטים או ממיינים תוצאות חיפוש</string>
@@ -350,7 +349,7 @@
   <string name="pref_secure_storage_category">אחסון מאובטח</string>
   <string name="pref_secure_storage_delayed_sync_title">סנכרון מושהה</string>
   <string name="pref_secure_storage_delayed_sync_summary">סינכרון של מערכות קבצים מאובטחות הוא פעולה יקרה. הפעל אפשרות זו כדי לאפשר תגובות מהירות יותר לאחר כל פעולה, כך שיתבצע סינכרון כאשר מערכת הקבצים איננה נמצאת בשימוש, אבל על חשבון איבוד המידע הממתין שלא הסתנכרן במידה והאפליקציה תקרוס.</string>
-  <string name="pref_secure_storage_reset_password_title">איפוס סיסמה</string>
+  <string name="pref_secure_storage_reset_password_title">שנה סיסמה</string>
   <string name="pref_secure_storage_delete_storage_title">מחיקת אחסון</string>
   <string name="pref_editor_behaviour_category">התנהגות</string>
   <string name="pref_no_suggestions">אין הצעות</string>
@@ -358,9 +357,9 @@
   <string name="pref_word_wrap">גלישת מילים</string>
   <string name="pref_hexdump">קבצים בינארים של Hexdump</string>
   <string name="pref_hexdump_desc">כאשר פותחים קובץ בינארי, צור hexdump של הקובץ ופתח אותו באמצעות hex viewer</string>
-  <string name="pref_editor_syntax_highlight_category">הבלט תחביר</string>
+  <string name="pref_editor_syntax_highlight_category">סימון תחביר</string>
   <string name="pref_syntax_highlight">הבלט תחביר</string>
-  <string name="pref_syntax_highlight_desc">סמן את התחביר של הקובץ מוצג בעורך (יעבד סימון תחביר רק עבור קבצים עם מבנה זמין)</string>
+  <string name="pref_syntax_highlight_desc">סמן את התחביר של הקובץ המוצג בעורך (רק כאשר מעבד סימון תחביר עבור סוג קובץ זה זמין)</string>
   <string name="pref_syntax_highlight_color_scheme">ערכת צבעים</string>
   <string name="pref_syntax_highlight_color_scheme_desc">בחר את ערכת הצבעים של סימון תחביר</string>
   <string name="pref_syntax_sh_use_theme_default">השתמש בערכת הנושא המוגדרת כברירת מחדל</string>

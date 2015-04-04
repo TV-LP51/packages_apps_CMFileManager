@@ -18,8 +18,10 @@ package com.cyanogenmod.filemanager.activities;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -318,11 +320,9 @@ public class NavigationActivity extends Activity
                         NavigationActivity.this.getCurrentNavigationView().refresh();
                     }
                 } else if (intent.getAction().compareTo(
-                        FileManagerSettings.INTENT_MOUNT_STATUS_CHANGED) == 0) {
-                    onRequestBookmarksRefresh();
-                    removeUnmountedHistory();
-                    removeUnmountedSelection();
-                } else if(intent.getAction().equals(Intent.ACTION_MEDIA_MOUNTED)) {
+                        FileManagerSettings.INTENT_MOUNT_STATUS_CHANGED) == 0 ||
+                            intent.getAction().equals(Intent.ACTION_MEDIA_MOUNTED) ||
+                            intent.getAction().equals(Intent.ACTION_MEDIA_UNMOUNTED)) {
                     onRequestBookmarksRefresh();
                     removeUnmountedHistory();
                     removeUnmountedSelection();
@@ -466,6 +466,8 @@ public class NavigationActivity extends Activity
     private boolean mExitFlag = false;
     private long mExitBackTimeout = -1;
 
+    private Dialog mActiveDialog = null;
+
     private int mOrientation;
 
     /**
@@ -499,8 +501,14 @@ public class NavigationActivity extends Activity
         filter.addAction(Intent.ACTION_TIME_CHANGED);
         filter.addAction(Intent.ACTION_TIMEZONE_CHANGED);
         filter.addAction(FileManagerSettings.INTENT_MOUNT_STATUS_CHANGED);
-        filter.addAction(Intent.ACTION_MEDIA_MOUNTED);
         registerReceiver(this.mNotificationReceiver, filter);
+
+        // This filter needs the file data scheme, so it must be defined separately.
+        IntentFilter newFilter = new IntentFilter();
+        newFilter.addAction(Intent.ACTION_MEDIA_MOUNTED);
+        newFilter.addAction(Intent.ACTION_MEDIA_UNMOUNTED);
+        newFilter.addDataScheme(ContentResolver.SCHEME_FILE);
+        registerReceiver(mNotificationReceiver, newFilter);
 
         // Set the theme before setContentView
         Theme theme = ThemeManager.getCurrentTheme(this);
@@ -682,6 +690,10 @@ public class NavigationActivity extends Activity
     protected void onDestroy() {
         if (DEBUG) {
             Log.d(TAG, "NavigationActivity.onDestroy"); //$NON-NLS-1$
+        }
+
+        if (mActiveDialog != null && mActiveDialog.isShowing()) {
+            mActiveDialog.dismiss();
         }
 
         // Unregister the receiver
@@ -876,6 +888,7 @@ public class NavigationActivity extends Activity
                 super.onDrawerOpened(drawerView);
             }
         };
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -994,7 +1007,7 @@ public class NavigationActivity extends Activity
         Drawable action = null;
         String actionCd = null;
         if (bookmark.mType.compareTo(BOOKMARK_TYPE.HOME) == 0) {
-            action = iconholder.getDrawable("ic_config_drawable"); //$NON-NLS-1$
+            action = iconholder.getDrawable("ic_edit_home_bookmark_drawable"); //$NON-NLS-1$
             actionCd = getApplicationContext().getString(
                     R.string.bookmarks_button_config_cd);
         }
@@ -1293,7 +1306,7 @@ public class NavigationActivity extends Activity
         try {
             // Recovery sdcards from storage manager
             StorageVolume[] volumes = StorageHelper
-                    .getStorageVolumes(getApplication());
+                    .getStorageVolumes(getApplication(), true);
             for (StorageVolume volume: volumes) {
                 if (volume != null) {
                     String mountedState = volume.getState();
@@ -1533,9 +1546,10 @@ public class NavigationActivity extends Activity
         // Check if request navigation to directory (use as default), and
         // ensure chrooted and absolute path
         String navigateTo = intent.getStringExtra(EXTRA_NAVIGATE_TO);
+        String intentAction = intent.getAction();
         if (navigateTo != null && navigateTo.length() > 0) {
             initialDir = navigateTo;
-        } else if (intent.getAction().equals(Intent.ACTION_VIEW)) {
+        } else if (intentAction != null && intentAction.equals(Intent.ACTION_VIEW)) {
             Uri data = intent.getData();
             if (data != null && (FileHelper.FILE_URI_SCHEME.equals(data.getScheme())
                     || FileHelper.FOLDER_URI_SCHEME.equals(data.getScheme())
@@ -1550,7 +1564,7 @@ public class NavigationActivity extends Activity
         // Add to history
         final boolean addToHistory = intent.getBooleanExtra(EXTRA_ADD_TO_HISTORY, true);
 
-        // We cannot navigate to a secure console if is unmount, go to root in that case
+        // We cannot navigate to a secure console if it is unmounted. So go to root in that case
         VirtualConsole vc = VirtualMountPointConsole.getVirtualConsoleForPath(initialDir);
         if (vc != null && vc instanceof SecureConsole && !((SecureConsole) vc).isMounted()) {
             initialDir = FileHelper.ROOT_DIRECTORY;
@@ -1560,7 +1574,7 @@ public class NavigationActivity extends Activity
             // Initial directory is the first external sdcard (sdcard, emmc, usb, ...)
             if (!StorageHelper.isPathInStorageVolume(initialDir)) {
                 StorageVolume[] volumes =
-                        StorageHelper.getStorageVolumes(this);
+                        StorageHelper.getStorageVolumes(this, false);
                 if (volumes != null && volumes.length > 0) {
                     initialDir = volumes[0].getPath();
                     //Ensure that initial directory is an absolute directory
@@ -1624,10 +1638,12 @@ public class NavigationActivity extends Activity
         }
 
         boolean needsEasyMode = false;
-        for (Bookmark bookmark :mSdBookmarks) {
-            if (bookmark.mPath.equalsIgnoreCase(initialDir)) {
-                needsEasyMode = true;
-                break;
+        if (mSdBookmarks != null ) {
+            for (Bookmark bookmark :mSdBookmarks) {
+                if (bookmark.mPath.equalsIgnoreCase(initialDir)) {
+                    needsEasyMode = true;
+                    break;
+                }
             }
         }
 
@@ -1710,16 +1726,18 @@ public class NavigationActivity extends Activity
             }
             return true;
         }
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            if (checkBackAction()) {
-                performHideEasyMode();
-                return true;
-            }
-
-            // An exit event has occurred, force the destroy the consoles
-            exit();
-        }
         return super.onKeyUp(keyCode, event);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (checkBackAction()) {
+            performHideEasyMode();
+            return;
+        }
+
+        // An exit event has occurred, force the destroy the consoles
+        exit();
     }
 
     /**
@@ -2707,4 +2725,7 @@ public class NavigationActivity extends Activity
         theme.setImageDrawable(this, (ButtonItem) v, "ab_delete_drawable"); //$NON-NLS-1$
     }
 
+    public void updateActiveDialog(Dialog dialog) {
+        mActiveDialog = dialog;
+    }
 }
